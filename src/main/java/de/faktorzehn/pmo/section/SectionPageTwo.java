@@ -1,32 +1,30 @@
-package de.faktorzehn.view;
+package de.faktorzehn.pmo.section;
 
 import org.linkki.core.binding.manager.BindingManager;
 import org.linkki.core.binding.manager.DefaultBindingManager;
 import org.linkki.core.vaadin.component.page.AbstractPage;
-import org.linkki.framework.ui.dialogs.ConfirmationDialog;
-import org.linkki.util.handler.Handler;
 
-public class LinkkiAdvancedPage extends AbstractPage {
+import de.faktorzehn.pmo.section.header.ClosableSectionPmo;
+import de.faktorzehn.pmo.section.header.SectionHeaderSectionPmo;
+
+public class SectionPageTwo extends AbstractPage {
 
     private static final long serialVersionUID = 1L;
 
     private final BindingManager bindingManager = new DefaultBindingManager();
 
-    public LinkkiAdvancedPage() {
+    public SectionPageTwo() {
     }
 
     @Override
     public void createContent() {
-        addSection(new HelloPmo(this::createOwnDialog));
+        addSection(new ClosableSectionPmo());
+        addSection(new SectionHeaderSectionPmo());
     }
 
     @Override
     protected BindingManager getBindingManager() {
         return bindingManager;
-    }
-
-    public void createOwnDialog() {
-        new ConfirmationDialog("Now try to create your own linkki web application!", Handler.NOP_HANDLER).open();
     }
 
 }
