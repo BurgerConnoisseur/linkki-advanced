@@ -12,6 +12,7 @@ import org.linkki.core.vaadin.component.tablayout.LinkkiTabLayout;
 import org.linkki.core.vaadin.component.tablayout.LinkkiTabSheet;
 import org.linkki.framework.ui.component.Headline;
 
+import de.faktorzehn.annotation.image.ImagePage;
 import de.faktorzehn.pmo.section.SectionPageOne;
 import de.faktorzehn.pmo.layout.LayoutPage;
 import de.faktorzehn.pmo.section.SectionPageTwo;
@@ -50,7 +51,8 @@ public class LinkkiAdvancedView extends VerticalLayout {
                 new SectionPageOne(),
                 new SectionPageTwo(),
                 new LayoutPage(),
-                new TablePage()
+                new TablePage(),
+                new ImagePage()
         );
     }
 

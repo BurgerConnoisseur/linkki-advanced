@@ -3,6 +3,7 @@ package de.faktorzehn.pmo.table.tree;
 
 import de.faktorzehn.model.Address;
 import de.faktorzehn.pmo.section.doublecolumn.DoubleColumnAddressSectionPmo;
+import de.faktorzehn.pmo.section.singlecolumn.AddressSectionPmo;
 
 public class GroupPersonAddressRowPmo extends AbstractGroupRowPmo {
 
@@ -14,7 +15,7 @@ public class GroupPersonAddressRowPmo extends AbstractGroupRowPmo {
 
     @Override
     public Object getAddress() {
-        return new DoubleColumnAddressSectionPmo(address);
+        return new AddressSectionPmo(address);
     }
 
 }

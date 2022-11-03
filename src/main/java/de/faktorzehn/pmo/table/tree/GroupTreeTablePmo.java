@@ -25,4 +25,8 @@ public class GroupTreeTablePmo extends SimpleTablePmo<Group, AbstractGroupRowPmo
         return true;
     }
 
+    @Override
+    public Class<? extends AbstractGroupRowPmo> getItemPmoClass() {
+        return super.getItemPmoClass();
+    }
 }

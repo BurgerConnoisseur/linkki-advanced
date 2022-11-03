@@ -1,7 +1,10 @@
 package de.faktorzehn.pmo.section;
 
+import org.linkki.core.binding.dispatcher.behavior.PropertyBehavior;
+import org.linkki.core.binding.dispatcher.behavior.PropertyBehaviorProvider;
 import org.linkki.core.binding.manager.BindingManager;
 import org.linkki.core.binding.manager.DefaultBindingManager;
+import org.linkki.core.binding.validation.ValidationService;
 import org.linkki.core.vaadin.component.page.AbstractPage;
 
 import com.vaadin.flow.component.html.Hr;
@@ -18,7 +21,12 @@ public class SectionPageOne extends AbstractPage {
 
     private static final long serialVersionUID = 1L;
 
-    private final BindingManager bindingManager = new DefaultBindingManager();
+    private final BindingManager bindingManager = new DefaultBindingManager(
+            ValidationService.NOP_VALIDATION_SERVICE,
+            PropertyBehaviorProvider.with(
+                    PropertyBehavior.readOnly()
+            )
+    );
 
     public SectionPageOne() {
     }

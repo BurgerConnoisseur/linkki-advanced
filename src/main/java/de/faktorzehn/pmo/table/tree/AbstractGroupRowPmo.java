@@ -64,7 +64,7 @@ public abstract class AbstractGroupRowPmo {
         return this instanceof GroupPersonRowPmo;
     }
     @BindVisible
-    @UITableColumn(flexGrow = 3)
+    @UITableColumn(flexGrow = 3, collapsible = UITableColumn.CollapseMode.COLLAPSIBLE)
     @UINestedComponent(position = 50, label = "Address")
     public Object getAddress() {
 
