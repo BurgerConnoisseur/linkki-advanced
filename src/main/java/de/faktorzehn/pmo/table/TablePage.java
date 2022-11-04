@@ -1,14 +1,18 @@
 package de.faktorzehn.pmo.table;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.linkki.core.binding.manager.BindingManager;
 import org.linkki.core.binding.manager.DefaultBindingManager;
 import org.linkki.core.vaadin.component.page.AbstractPage;
 
+import com.vaadin.flow.component.html.Hr;
+
 import de.faktorzehn.model.Address;
 import de.faktorzehn.model.Group;
 import de.faktorzehn.model.Person;
+import de.faktorzehn.pmo.table.selection.SelectablePersonTablePmo;
 import de.faktorzehn.pmo.table.tree.GroupTreeTablePmo;
 
 public class TablePage extends AbstractPage {
@@ -40,6 +44,14 @@ public class TablePage extends AbstractPage {
         group2.setName("G2");
         group2.setPeople(List.of(withAddress(new Person())));
         addSection(new GroupTreeTablePmo(() -> List.of(group, group2)));
+        add(new Hr());
+        var people = List.of(
+                new Person("John", "Doe", LocalDate.now(), ""),
+                new Person("Jane", "Doe", LocalDate.now(), ""),
+                new Person("Max", "Mustermann", LocalDate.now(), ""),
+                new Person("Martha", "Mustermann", LocalDate.now(), "")
+        );
+        addSection(new SelectablePersonTablePmo(() -> people));
     }
 
     @Override

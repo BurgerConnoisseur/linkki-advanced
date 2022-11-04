@@ -21,6 +21,13 @@ public class Person {
     public Person() {
     }
 
+    public Person(String givenName, String surname, LocalDate dateOfBirth, String occupation) {
+        this.givenName = givenName;
+        this.surname = surname;
+        this.dateOfBirth = dateOfBirth;
+        this.occupation = occupation;
+    }
+
     public String getGivenName() {
         return givenName;
     }

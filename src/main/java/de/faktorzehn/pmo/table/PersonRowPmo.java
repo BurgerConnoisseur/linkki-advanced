@@ -17,6 +17,10 @@ public class PersonRowPmo {
         this.person = person;
     }
 
+    public Person getPerson() {
+        return person;
+    }
+
     @UITextField(position = 10, label = "Given Name:", modelAttribute = Person.PROPERTY_GIVEN_NAME)
     public String getGivenName() {
         return person.getGivenName();
